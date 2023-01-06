@@ -28,18 +28,18 @@ public:
     static UINT32 hashToScn(UINT32 hash);
 };
 
-template <UINT32 scn, typename... ArgTypes>
+template <UINT32 hash, typename... ArgTypes>
 class SneakCall
 {
 public:
-    SneakCall() : UINT32(SneakHelper::hashToScn(scn)) 
+    SneakCall() : scn(SneakHelper::hashToScn(hash)) 
     {
 
     }
 
     NTSTATUS call(ArgTypes... args)
     {
-        using Executor = NTSTATUS(NTAPI*)(scn, ArgTypes...); 
+        using Executor = NTSTATUS(NTAPI*)(UINT32, ArgTypes...); 
         return (Executor(executeSyscall))(scn, std::forward<ArgTypes>(args)...);
     }
 

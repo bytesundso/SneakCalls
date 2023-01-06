@@ -10,7 +10,7 @@ FLAGS_ASM=
 FLAGS_C=
 FLAGS_CPP=/std:c++20 /Gd /GR- /O1 /sdl- /GS-
 
-LINK=lib /NODEFAULTLIB /LIBSYSTEM:WINDOWS
+LINK=lib /NODEFAULTLIB /SUBSYSTEM:WINDOWS
 
 !IF !DEFINED(VSCMD_ARG_TGT_ARCH) || !DEFINED(AS) || !DEFINED(CC) || !DEFINED(CPP)
 !ERROR "Not all macros are defined! (Did you use VS Development Powershell/Command Prompt?)"
