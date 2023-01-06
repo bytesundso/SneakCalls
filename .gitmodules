@@ -1,0 +1,3 @@
+[submodule "lib/PeHelper"]
+	path = lib/PeHelper
+	url = https://github.com/bytesundso/PeHelper
